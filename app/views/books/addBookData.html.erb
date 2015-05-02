@@ -5,31 +5,31 @@
 	<table align = "center" style = "padding: 15px">
 		
 		<tr>
-			<td><%= f.label "Author First Name (*)" %></td>
+			<td><%= f.label :authorFirst, "Author First Name (*)" %></td>
 			<td><%= f.text_field :authorFirst %></td>
 		</tr>
 		<tr>
-			<td><%= f.label "Author Last Name (*)"  %></td>
+			<td><%= f.label :authorLast, "Author Last Name (*)"  %></td>
 			<td><%= f.text_field :authorLast %></td>
 		</tr>
 		<tr>
-			<td><%= f.label "Title (*)"  %></td>
+			<td><%= f.label :title, "Title (*)"  %></td>
 			<td><%= f.text_field :title %></td>
 		</tr>
 		<tr>
-			<td><%= f.label "Year (*)" %></td>
+			<td><%= f.label :year, "Year (*)" %></td>
 			<td><%= f.text_field :year %></td>
 		</tr>
 		<tr>
-			<td><%= f.label "ISBN (*)" %></td>
+			<td><%= f.label :isbn,"ISBN (*)" %></td>
 			<td><%= f.text_field :isbn %></td>
 		</tr>
 		<tr>
-			<td><%= f.label "Book Type" %></td>
+			<td><%= f.label :bookType "Book Type" %></td>
 			<td><%= f.text_field :bookType %></td>
 		</tr>
 		<tr>
-			<td><%= f.label "Genre" %></td>
+			<td><%= f.label :genre, "Genre" %></td>
 			<td><%= f.text_field :genre %></td>
 		</tr>
 	</table>

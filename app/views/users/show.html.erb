@@ -1,9 +1,38 @@
 <div class = "page-header">
 	<small> Fun Fact: <%= @fact %></small>
 </div>
-<div class= "center jumbotron">
-	<p>
+<div class= "jumbotron">
+		<p>Hello <%= @user.name%> </p>
 		<%= gravatar_for @user%>
-		<%= @user.name%>
+		<p>Add Book to My List </p>
+		<%= form_for(@read) do |f| %>
+		<table style = "padding: 15px">
+			<tr>
+				<td><%= f.label :book_id, "BookID(*)" %></td>
+				<td><%= f.text_field :book_id %></td>
+			</tr>	
+			<tr>
+				<td><%= f.label :reading, "Read"  %></td>
+				<td><%= f.check_box :reading %></td>
+			</tr>
+			<br>
+		</table>
+		<%= f.submit "Create my account" %>
+		<% end %>
 	</p>
+	<p> Books you have read: </p>
+	<table class="table table-bordered">
+		<tr>
+			<td> Title: </td>
+			<td> Author: </td>
+			<td> ISBN: </td>
+		</tr>
+		<% @books.each do |f|%>
+		<tr>
+			<td><%= Book.find_by_id(f.book_id).title %> </td>
+			<td><%= Book.find_by_id(f.book_id).authorFirst + " " + Book.find_by_id(f.book_id).authorLast %> </td>
+			<td><%= Book.find_by_id(f.book_id).isbn %> </td>
+		</tr>	
+		<% end %>
+	</table>
 </div>

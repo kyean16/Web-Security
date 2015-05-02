@@ -4,4 +4,5 @@ class Book < ActiveRecord::Base
 	validates :authorLast, presence:true
 	validates :title, presence:true
 	validates :year, presence:true
+	has_many :reads
 end

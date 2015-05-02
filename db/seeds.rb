@@ -8,7 +8,9 @@
 
 #books
 
-Book.delete_all
-Book.create(bookType: 'Book', authorFirst: "Herbert", authorLast:"Schildt", title:'Programming in Java', genre:"Education", year: 2014, isbn: "9780071809252")
-Book.create(bookType: 'Manga', authorFirst: "Eiichiro", authorLast:"Oda", title:'One Piece Volume 41', genre:"Fantasy", year: 2013, isbn: "9780071809250")
-Book.create(bookType: 'Comic', authorFirst: "Stan", authorLast:"Lee", title:'Iron Man', genre:"Adventure", year: 1980, isbn: "0080071809251")
+# Book.delete_all
+# Book.create(bookType: 'Book', authorFirst: "Herbert", authorLast:"Schildt", title:'Programming in Java', genre:"Education", year: 2014, isbn: "9780071809252")
+# Book.create(bookType: 'Manga', authorFirst: "Eiichiro", authorLast:"Oda", title:'One Piece Volume 41', genre:"Fantasy", year: 2013, isbn: "9780071809250")
+# Book.create(bookType: 'Comic', authorFirst: "Stan", authorLast:"Lee", title:'Iron Man', genre:"Adventure", year: 1980, isbn: "0080071809251")
+Read.delete_all
+

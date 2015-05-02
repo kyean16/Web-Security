@@ -37,6 +37,8 @@ before_action :admin_user,only: :destroy
 
   def show
     @user = User.find(params[:id])
+    @books = @user.reads.all
+    @read = Read.new #Add Read
     @fact = randomFunFact()
   end
 
