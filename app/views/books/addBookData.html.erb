@@ -1,0 +1,38 @@
+<br>
+<div class= "center jumbotron">
+	<h1>Sign up</h1>			 
+	<%= form_for(@book) do |f| %>
+	<table align = "center" style = "padding: 15px">
+	<tr>
+			<td><%= f.label :bookType %></td>
+			<td><%= f.text_field :bookType %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :authorFirst %></td>
+			<td><%= f.text_field :authorFirst %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :authorLast %></td>
+			<td><%= f.text_field :authorLast %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :title %></td>
+			<td><%= f.text_field :title %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :genre %></td>
+			<td><%= f.text_field :genre %></td>
+		</tr>
+		<tr>
+			<td><%= f.label "year" %></td>
+			<td><%= f.text_field :year %></td>
+		</tr>
+		<tr>
+			<td><%= f.label "isbn" %></td>
+			<td><%= f.text_field :isbn %></td>
+		</tr>
+
+	</table>
+	<%= f.submit "Add Book" %>
+	<% end %>
+</div>

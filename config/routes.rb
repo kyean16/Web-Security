@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'static_pages/help'
   get 'sign' => 'users#new'
   get 'recommend' => 'users#recommend'
-  get 'find' => 'users#find'
+  get 'find' => 'books#find'
+  get 'addDatabase' => 'books#addBookData'
 
   root 'static_pages#home'
   get 'help' => 'static_pages#help'
@@ -15,10 +16,11 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
-
+  post 'books_path' => 'users#addBookData'
 
 
   resources :users 
+  resources :books
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

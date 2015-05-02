@@ -1,0 +1,14 @@
+<br>
+<div class= "center jumbotron">
+	<h1>Sign up</h1>			 
+	<%= form_for(@book) do |f| %>
+	<table align = "center" style = "padding: 15px">
+		<tr>
+			<td><%= f.label :title %></td>
+			<td><%= f.text_field :title %></td>
+		</tr>
+		<br>
+	</table>
+	<%= f.submit "Create a new book" %>
+	<% end %>
+</div>
