@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#books
+
+Book.delete_all
+Book.create(bookType: 'book', authorFirst: "Herbert", authorLast:"Schildt", title:'Programming in Java', genre:"Education", year: 2014, isbn: 9780071809252)
+

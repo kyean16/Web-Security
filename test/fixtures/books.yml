@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bookType: MyString
+  authorFirst: MyString
+  authorLast: MyString
+  title: MyString
+  genre: MyString
+  year: 9.99
+  isbn: 9.99
+
+two:
+  bookType: MyString
+  authorFirst: MyString
+  authorLast: MyString
+  title: MyString
+  genre: MyString
+  year: 9.99
+  isbn: 9.99
