@@ -1,14 +1,21 @@
-<h1>Log in </h1>
+<br>
+<div class= "center jumbotron">
+	<h1>Log in </h1>
 
-<%= form_for(:session, url: login_path) do |f| %>
+	<%= form_for(:session, url: login_path) do |f| %>
+	<table align = "center" style = "padding: 15px">
+		<tr>
+			<td><%= f.label :email %></td>
+			<td><%= f.email_field :email %></td>
+		</tr>
+		<tr>
+			<td><%= f.label :password %></td>
+			<td><%= f.password_field :password %></td>
+		</tr>
+	</table>
+		<%= f.submit "Log in"%>
+	<% end %>
 
-	<%= f.label :email %>
-	<%= f.email_field :email %>
+	<p>New user? <%= link_to "Sign up now!", :controller => 'users', :action => 'new' %> </p>
+</div>
 
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-
-	<%= f.submit "Log in"%>
-<% end %>
-
-<p>New user? <%= link_to "Sign up now!", :controller => 'users', :action => 'new' %> </p>
