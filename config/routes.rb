@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'static_pages/home'
   get 'static_pages/help'
   get 'sign' => 'users#new'
+  get 'recommend' => 'users#recommend'
+  get 'find' => 'users#find'
 
   root 'static_pages#home'
   get 'help' => 'static_pages#help'
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+
 
 
   resources :users 

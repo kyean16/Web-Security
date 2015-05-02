@@ -37,6 +37,7 @@ end
 
   def show
     @user = User.find(params[:id])
+    @fact = randomFunFact()
   end
 
   def destroy     
@@ -45,6 +46,11 @@ end
     redirect_to users_url   
 end
 
+  def find
+  end
+
+  def recommend
+  end
 
   def update
     @user = User.find(params[:id])
