@@ -1,8 +1,5 @@
 <br>
-<div class = "center jumbotron">
-	<% flash.each do |message_type, message| %>
-     <%= message_type %> <%= message %>
-	<% end %>
+<div class = "center jumbotron"> 
 	<small> <%=  link_to "Cannot find your book? Add it to our list!", addDatabase_path, class: "btn btn-sm btn-primary" %> </small>
 	<h1> List of Books </h1>
 	<table class="table table-bordered">
@@ -12,6 +9,7 @@
 			<td>Title:</td> 
 			<td>Genre:</td> 
 			<td>Medium:</td> 
+			<td>ISBN:</td> 
 		</tr>
 		<% @books.each do |f|%>
 		<tr> 
@@ -20,6 +18,7 @@
 			<td> <%= f.title %> </td>
 			<td> <%= f.genre %> </td>
 			<td> <%= f.bookType %> </td>
+			<td> <%= f.isbn %> </td>
 		</tr>
 			<% end %>
 	</table>

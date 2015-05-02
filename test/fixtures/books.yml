@@ -7,7 +7,7 @@ one:
   title: MyString
   genre: MyString
   year: 9.99
-  isbn: 9.99
+  isbn: MyString
 
 two:
   bookType: MyString
@@ -16,4 +16,4 @@ two:
   title: MyString
   genre: MyString
   year: 9.99
-  isbn: 9.99
+  isbn: MyString

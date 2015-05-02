@@ -1,3 +1,7 @@
 class Book < ActiveRecord::Base
-	validates :isbn, presence:true,length: {maximum: 15}, :numericality => { :greater_than_or_equal_to => 0 },uniqueness: true
+	validates :isbn, presence:true,length: {maximum: 13}, format: { with: /\d/,message: "only allows digits" },uniqueness: true
+	validates :authorFirst, presence:true
+	validates :authorLast, presence:true
+	validates :title, presence:true
+	validates :year, presence:true
 end
