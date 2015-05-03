@@ -17,8 +17,9 @@ class ReadsController < ApplicationController
        flash[:success] = "Book Sucessfully Added!"
        redirect_to (:back)
     else
-       flash[:danger] = "Failure to add Book, please try again"
-       render 'new'
+       flash[:danger] = "Book already exists"
+       redirect_to (:back)
+
        end
    end
 

@@ -22,4 +22,36 @@ module UsersHelper
 		num = rand(arr.size);
 		arr.at(num)
 	end
+
+	#Return a specific Stat depending on the number num. Returns sentence
+	def randomStatSentenceUser(num)
+		stats = [
+			"Total Number of Books in your collection:",
+			"Total Number of Book:",
+			"Average Number of Books read by Users:",
+			"Favorite genre of book:",
+		]
+		stats.at(num)
+	end
+
+	#Return a specific Stat depending on the number  num. Return stat
+	def randomStatUser(num)
+		if(@user != nil)
+			stats = [
+				@user.reads.all.count,
+				User.all.count,
+				10,
+				"Fiction",
+			]
+			stats.at(num)
+		end
+	end
+
+	#Generates a random number, calls randomStats with the random number created and return statement
+	def numUser
+	  	random = rand(@arr.size)
+	  	@statSentence = randomStatSentenceUser(@arr.at(random));
+	  	@stat = randomStatUser(@arr.at(random));
+	  	@arr.delete_at(random)
+	end
 end

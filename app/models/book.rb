@@ -5,4 +5,7 @@ class Book < ActiveRecord::Base
 	validates :title, presence:true
 	validates :year, presence:true
 	has_many :reads
+	def toString
+		"#{authorFirst} #{authorLast}, #{title}"
+	end
 end

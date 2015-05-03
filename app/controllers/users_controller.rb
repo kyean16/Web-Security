@@ -40,6 +40,7 @@ before_action :admin_user,only: :destroy
     @books = @user.reads.all
     @read = Read.new #Add Read
     @fact = randomFunFact()
+    @arr = [0, 1, 2, 3] #Number of options for stats
   end
 
   def destroy     
