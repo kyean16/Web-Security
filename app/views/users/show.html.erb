@@ -7,9 +7,8 @@
 		<p>Add Book to My List </p>
 		<%= form_for(@read) do |f| %>
 		<table style = "padding: 15px">
-			<tr>
-				<td><%= f.label :book_id, "BookID(*)" %></td>
-				<td><%= f.text_field :book_id %></td>
+			<tr> 
+				<td>  <%= f.collection_select :book_id, Book.order(:id),:id,:title, include_blank: true %></td>
 			</tr>	
 			<tr>
 				<td><%= f.label :reading, "Read"  %></td>
