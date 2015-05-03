@@ -54,4 +54,54 @@ module UsersHelper
 	  	@stat = randomStatUser(@arr.at(random));
 	  	@arr.delete_at(random)
 	end
+
+	#Creates an array with the list of Genre read
+	def bookGenre
+		arr =[]
+		current_user.reads.each do |f|
+			arr.push(Book.find_by_id(f.book_id).genre)
+		end
+		h = Hash.new(0)
+			arr.each do |word|
+			h[word] += 1
+		end
+		genre = h.sort_by{|word,count| count}
+		genre = genre.reverse # Hash highest the genre picked the most
+
+		arr2 =[]
+		genre.each do |key,value|
+			arr2.push(key)
+		end
+		if(arr2.size > 1)
+			@popGenre = arr2.at(0)
+		else
+			@popGenre = "Adventure"
+		end
+	end
+
+	#Creates an array with the list of Genre read
+	def bookAuthor
+		arr =[]
+		current_user.reads.each do |f|
+			book = Book.find_by_id(f.book_id)
+			author = book.authorFirst + " " + book.authorLast
+			arr.push(author)
+		end
+		@h = Hash.new(0)
+			arr.each do |word|
+			@h[word.to_sym] += 1
+		end
+		genre = @h.sort_by{|word,count| count}
+		genre = genre.reverse # Hash highest the genre picked the most
+
+		arr2 =[]
+		genre.each do |key,value|
+			arr2.push(key)
+		end
+		if(arr2.size > 1)
+			@popAuthor = arr2.at(0)
+		else
+			@popAuthor = "Adventure"
+		end
+	end
 end

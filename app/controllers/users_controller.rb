@@ -50,6 +50,8 @@ before_action :admin_user,only: :destroy
   end
 
   def recommend
+    bookGenre
+    bookAuthor
   end
 
   def update

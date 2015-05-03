@@ -9,7 +9,8 @@
 					<p>Add Book to My List </p>
 					<%= form_for(@read) do |f| %>
 					<%= f.collection_select :book_id, Book.order(:id),:id, :toString , include_blank: false %>
-					<%= f.submit "Add Book:" %>
+					<%= f.submit "Add Book" %>
+					<small> <%=  link_to "Cannot find your book? Add it to our list!", addDatabase_path, class: "btn btn-sm btn-primary" %> </small>
 					<% end %>
 				</p>
 				<p> Books you have read: </p>
