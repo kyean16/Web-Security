@@ -70,6 +70,7 @@ before_action :admin_user,only: :destroy
     @user = User.new(user_params)
     if @user.save
        flash[:success] = "Welcome to the Sample App!"
+       log_in @user 
        redirect_to @user
     else
        flash[:danger] = "Failure to sign up, please try again"
