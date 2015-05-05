@@ -19,12 +19,14 @@
 						<td> Title: </td>
 						<td> Author: </td>
 						<td> ISBN: </td>
+						<td> Remove: </td>
 					</tr>
 					<% @books.each do |f|%>
 					<tr>
 						<td><%= Book.find_by_id(f.book_id).title %> </td>
 						<td><%= Book.find_by_id(f.book_id).authorFirst + " " + Book.find_by_id(f.book_id).authorLast %> </td>
 						<td><%= Book.find_by_id(f.book_id).isbn %> </td>
+						<td><%= link_to "Remove Book", f, method: :delete, data: {confirm: "Are you sure?"} %> </td>
 					</tr>	
 					<% end %>
 				</table>

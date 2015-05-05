@@ -1,4 +1,5 @@
 class ReadsController < ApplicationController
+  before_action :current_user,     only: :destroy
   def new
   	
   end
@@ -21,6 +22,13 @@ class ReadsController < ApplicationController
        redirect_to (:back)
 
        end
+   end
+
+   def destroy
+    Read.find(params[:id]).destroy     
+    flash[:success] = "Book Removed"     
+    redirect_to (:back)   
+
    end
 
   	private
